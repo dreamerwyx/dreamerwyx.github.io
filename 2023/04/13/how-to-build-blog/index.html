@@ -5,8 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="如何快速搭建自己的专属博客, Dreamer">
-    <meta name="description" content="一、前言记录下博客搭建过程，首先介绍下搭建的框架：Hexo 是一个快速、简洁且高效的博客框架,Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。介绍完了，下面开始搭建喽！
-二、博客环境搭建">
+    <meta name="description" content="一、前言记录下博客搭建过程，首先介绍下搭建的框架：Hexo 是一个快速、简洁且高效的博客框架,Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 
+介绍完了，下面开始搭建喽！
+二、博客环境">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -343,7 +344,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>记录下博客搭建过程，首先介绍下搭建的框架：<br><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架,Hexo 使用 <a href="hhttps://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>介绍完了，下面开始搭建喽！</p>
+                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>记录下博客搭建过程，首先介绍下搭建的框架：<br><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架,Hexo 使用 <a href="hhttps://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+<p>介绍完了，下面开始搭建喽！</p>
 <h2 id="二、博客环境搭建"><a href="#二、博客环境搭建" class="headerlink" title="二、博客环境搭建"></a>二、博客环境搭建</h2><p>我的系统是<code>macOs</code>，和<code>linux</code>的操作基本没差别。</p>
 <h3 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download">Node.js</a>官网下载 node.js 的安装程序，根据你电脑系统的配置信息，下载对应的安装程序，然后就是打开安装包，按照引导一步一步进行就好了。<br>安装好后，在命令行执行 <code>node -v</code> 和 <code>npm -v</code>，打印出版本号就是安装成功了。</p>
 <pre class=" language-bash"><code class="language-bash">$ node -v
@@ -357,10 +359,12 @@ $ 9.5.1
 <p>其他 <code>linux</code> ，比如<code>Ubuntu</code> :</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> apt <span class="token function">install</span> <span class="token function">git</span>
 </code></pre>
-<h3 id="3-github配置"><a href="#3-github配置" class="headerlink" title="3.github配置"></a>3.github配置</h3><p>首先没有<a target="_blank" rel="noopener" href="https://github.com/">github</a>账号的，要去注册下github的账号。<br>然后新建代码仓库，注意代码仓库的名字一定要是这样<code>&lt;your github name&gt;.github.io</code>.<br>接下来在github添加你的SSH Key。  </p>
+<h3 id="3-github配置"><a href="#3-github配置" class="headerlink" title="3.github配置"></a>3.github配置</h3><p>首先没有<a target="_blank" rel="noopener" href="https://github.com/">github</a>账号的，要去注册下github的账号。 </p>
+<p>然后新建代码仓库，注意代码仓库的名字一定要是这样<code>&lt;your github name&gt;.github.io</code>.  </p>
+<p>接下来在github添加你的SSH Key，因为要频繁的push代码。  </p>
 <p>接下来在本地设置git信息。</p>
-<pre><code>git config --global user.name "你注册时的用户名"
-git config --global user.email "你注册时的邮箱"
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"你注册时的用户名"</span>
+<span class="token function">git</span> config --global user.email <span class="token string">"你注册时的邮箱"</span>
 </code></pre>
 <h2 id="三、博客初始化"><a href="#三、博客初始化" class="headerlink" title="三、博客初始化"></a>三、博客初始化</h2><p>1.命令行安装hexo （安装博客框架）</p>
 <p>命令：<code>npm install -g hexo-cli</code></p>
@@ -374,10 +378,10 @@ git config --global user.email "你注册时的邮箱"
 <h2 id="四、部署博客到Github"><a href="#四、部署博客到Github" class="headerlink" title="四、部署博客到Github"></a>四、部署博客到Github</h2><p>1.在<code>~/blog</code>目录下安装 <code>hexo-deployer-git</code> 插件。<br>命令：<code>npm install hexo-deployer-git --save</code></p>
 <p>说明：必须安装，否则执行<code>hexo d</code> 的话会报错</p>
 <p>2.编辑<code>~/blog</code>目录下的 _config.yml 文件, 在文件末尾修改配置文件：</p>
-<pre><code>deploy:
-  type: git
-  repo: github上对应仓库的ssh链接，如：     git@github.com:xxx/xxx.github.io.git
-  branch: main
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> github上对应仓库的ssh链接，如：     git@github.com<span class="token punctuation">:</span>xxx/xxx.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> main
 </code></pre>
 <p>注意：现在github的主分支是<code>main</code>。<br>3.部署<br><code>hexo d</code> 推送代码到远程仓库。<br>一些顺利的话，大概几分钟后，在浏览器输入<code>username.github.io</code> 就可以看到你的博客了，就算本地电脑关机也没事。<br>常用命令说明：  </p>
 <table>
