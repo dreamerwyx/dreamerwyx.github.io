@@ -285,8 +285,12 @@
 </div>
 
 
+
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+    // 每天切换 banner 图.  Switch banner image every day.
+    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    var bannerUrl = "/medias/banner/" + Math.floor(Math.random() * 11) + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -316,19 +320,19 @@
                 </a>
                 
                 
-                <a href="/categories/npm/" title="npm: 1">
+                <a href="/categories/python/" title="python: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #F5EEF8;">npm
+                             chip-default "
+                            style="background-color: #F5EEF8;">python
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/python/" title="python: 1">
+                <a href="/categories/npm/" title="npm: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #D5F5E3;">python
+                             chip-active "
+                            style="background-color: #D5F5E3;">npm
                         <span class="tag-length">1</span>
                     </span>
                 </a>

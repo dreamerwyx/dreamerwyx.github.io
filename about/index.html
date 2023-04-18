@@ -292,8 +292,12 @@
 </div>
 
 
+
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+    // 每天切换 banner 图.  Switch banner image every day.
+    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    var bannerUrl = "/medias/banner/" + Math.floor(Math.random() * 11) + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -523,7 +527,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"文章","value":1},{"name":"npm","value":1},{"name":"python","value":1}],
+                data: [{"name":"文章","value":1},{"name":"python","value":1},{"name":"npm","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -547,7 +551,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["第一篇博文","npm","node.js","python","pyenv"]
+                data: ["第一篇博文","python","pyenv","npm","node.js"]
             }
         ],
         yAxis: [
@@ -662,18 +666,6 @@
             
             
             
-            <a href="/tags/npm/">
-                <span class="chip center-align waves-effect waves-light chip-default">npm</span>
-            </a>
-            
-            
-            
-            <a href="/tags/node-js/">
-                <span class="chip center-align waves-effect waves-light chip-default">node.js</span>
-            </a>
-            
-            
-            
             <a href="/tags/python/">
                 <span class="chip center-align waves-effect waves-light chip-default">python</span>
             </a>
@@ -682,6 +674,18 @@
             
             <a href="/tags/pyenv/">
                 <span class="chip center-align waves-effect waves-light chip-default">pyenv</span>
+            </a>
+            
+            
+            
+            <a href="/tags/npm/">
+                <span class="chip center-align waves-effect waves-light chip-default">npm</span>
+            </a>
+            
+            
+            
+            <a href="/tags/node-js/">
+                <span class="chip center-align waves-effect waves-light chip-default">node.js</span>
             </a>
             
             

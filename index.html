@@ -328,8 +328,12 @@
 </div>
 
 
+
 <script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
+    // 每天切换 banner 图.  Switch banner image every day.
+    // var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    var bannerUrl = "/medias/banner/" + Math.floor(Math.random() * 11) + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -399,29 +403,6 @@
         
             
             <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('/medias/featureimages/10.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">Error: EACCES: permission denied 解决方法</div>
-                            <div class="description center-align">
-                                
-                                    使用npm命令时报错误Error: EACCES: permission denied，如何解决？报错信息如下：npm WARN checkPermissions Missing write access to /usr/lib/node_
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2023/04/18/npm-error/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
                  style="background-image: url('/medias/featureimages/7.jpg');">
                 <div class="container">
                     <div class="row">
@@ -436,6 +417,29 @@
                             </div>
                             <div class="cover-btns">
                                 <a href="/2023/04/18/python-version-manager/" class="waves-effect waves-light btn"
+                                   target="_blank">
+                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="carousel-item amber white-text carousel-post bg-cover"
+                 style="background-image: url('/medias/featureimages/10.jpg');">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <div class="title center-align">Error: EACCES: permission denied 解决方法</div>
+                            <div class="description center-align">
+                                
+                                    使用npm命令时报错误Error: EACCES: permission denied，如何解决？报错信息如下：npm WARN checkPermissions Missing write access to /usr/lib/node_
+                                
+                            </div>
+                            <div class="cover-btns">
+                                <a href="/2023/04/18/npm-error/" class="waves-effect waves-light btn"
                                    target="_blank">
                                     <i class="icon fa fa-eye fa-fw"></i>阅读更多
                                 </a>
