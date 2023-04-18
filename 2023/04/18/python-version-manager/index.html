@@ -318,7 +318,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-18
+                    2023-04-19
                 </div>
                 
 
@@ -352,14 +352,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>不同的脚本，项目需要用的Python版本不一定是相同的。那怎么让多个版本共存，并且可以任意切换呢？</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不同的脚本，项目需要用的Python版本不一定是相同的。那怎么让多个版本共存，并且可以任意切换呢？</p>
 <p>下面介绍了两种方法，<code>Ubuntu</code>应该是两种都适用的，<code>MacOS</code>实测适用方法二。</p>
-<h1 id="方法一：update-alternatives"><a href="#方法一：update-alternatives" class="headerlink" title="方法一：update-alternatives"></a>方法一：update-alternatives</h1><p><code>update-alternatives</code>命令用于处理 Linux 系统中软件版本的切换，使其多版本共存。（update-alternatives可以管理很多软件的版本切换，这里介绍下以python为例）<br>使用这种方法管理python版本需要和apt一起使用。<br>首先系统自带的python版本是3.6.9，现在需要一个<code>&gt;=3.7</code>的版本。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt update
+<h2 id="方法一：update-alternatives"><a href="#方法一：update-alternatives" class="headerlink" title="方法一：update-alternatives"></a>方法一：update-alternatives</h2><p><code>update-alternatives</code>命令用于处理 Linux 系统中软件版本的切换，使其多版本共存。（update-alternatives可以管理很多软件的版本切换，这里介绍下以python为例）<br>使用这种方法管理python版本需要和apt一起使用。<br>首先系统自带的python版本是3.6.9，现在需要一个<code>&gt;=3.7</code>的版本。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt update
 <span class="token function">sudo</span> apt <span class="token function">install</span> python3.7
 </code></pre>
 <p>此时python3.7已经安装，但默认命令python3指向的还是3.6.9，下面切换python的默认指向。</p>
-<h2 id="切换默认指向"><a href="#切换默认指向" class="headerlink" title="切换默认指向"></a>切换默认指向</h2><p>使用update-alternatives，给python版本编号。<br>要先安装update-alternatives，先添加两个指向。</p>
+<h3 id="切换默认指向"><a href="#切换默认指向" class="headerlink" title="切换默认指向"></a>切换默认指向</h3><p>使用update-alternatives，给python版本编号。<br>要先安装update-alternatives，先添加两个指向。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 <span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
 </code></pre>
@@ -367,11 +367,11 @@
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> update-alternatives --config python3
 </code></pre>
 <p>这样就完成了python的版本切换。  </p>
-<h2 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h2><ul>
+<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><ul>
 <li>优点：安装比较方便，比较适合对python版本要求不是很严格的用户。  </li>
 <li>缺点：apt支持的python版本有限，特别新的版本一般是没有的。</li>
 </ul>
-<h1 id="方法二：Pyenv"><a href="#方法二：Pyenv" class="headerlink" title="方法二：Pyenv"></a>方法二：Pyenv</h1><p><a target="_blank" rel="noopener" href="https://github.com/pyenv/pyenv">pyenv</a>做什么…</p>
+<h2 id="方法二：Pyenv"><a href="#方法二：Pyenv" class="headerlink" title="方法二：Pyenv"></a>方法二：Pyenv</h2><p><a target="_blank" rel="noopener" href="https://github.com/pyenv/pyenv">pyenv</a>做什么…</p>
 <ul>
 <li>允许您基于每个用户更改全局 Python 版本。</li>
 <li>为每个项目的 Python 版本提供支持。</li>
@@ -379,9 +379,9 @@
 <li>一次搜索来自多个 Python 版本的命令。</li>
 </ul>
 <p>简单来说就是一个简单的Python版本管理器，可以轻松地在各个Python版本之间进行切换。<br>Github 30.8k Star,有点东西。。</p>
-<h2 id="安装（推荐手动安装）："><a href="#安装（推荐手动安装）：" class="headerlink" title="安装（推荐手动安装）："></a>安装（推荐手动安装）：</h2><h3 id="自动安装（需要科学上网）"><a href="#自动安装（需要科学上网）" class="headerlink" title="自动安装（需要科学上网）:"></a>自动安装（需要科学上网）:</h3><pre class=" language-bash"><code class="language-bash">curl https://pyenv.run <span class="token operator">|</span> <span class="token function">bash</span>
+<h3 id="安装（推荐手动安装）："><a href="#安装（推荐手动安装）：" class="headerlink" title="安装（推荐手动安装）："></a>安装（推荐手动安装）：</h3><h4 id="自动安装（需要梯子）"><a href="#自动安装（需要梯子）" class="headerlink" title="自动安装（需要梯子）:"></a>自动安装（需要梯子）:</h4><pre class=" language-bash"><code class="language-bash">curl https://pyenv.run <span class="token operator">|</span> <span class="token function">bash</span>
 </code></pre>
-<h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装:"></a>手动安装:</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># clone,编译</span>
+<h4 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装:"></a>手动安装:</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># clone,编译</span>
 <span class="token function">git</span> clone https://github.com/pyenv/pyenv.git ~/.pyenv
 <span class="token function">cd</span> ~/.pyenv <span class="token operator">&amp;&amp;</span> src/configure <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> -C src
 <span class="token comment" spellcheck="true"># 配置环境变量</span>
@@ -394,7 +394,7 @@
 <pre class=" language-bash"><code class="language-bash">$ pyenv -v
 $ pyenv 2.3.17-5-ga57e0b50
 </code></pre>
-<h3 id="使用介绍："><a href="#使用介绍：" class="headerlink" title="使用介绍："></a>使用介绍：</h3><pre class=" language-bash"><code class="language-bash">$ pyenv
+<h4 id="使用介绍："><a href="#使用介绍：" class="headerlink" title="使用介绍："></a>使用介绍：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv
 pyenv 2.3.17-5-ga57e0b50
 Usage: pyenv <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>args<span class="token operator">></span><span class="token punctuation">]</span>
 
@@ -454,7 +454,7 @@ See `pyenv <span class="token function">help</span> <span class="token operator"
 <td>卸载指定版本</td>
 </tr>
 </tbody></table>
-<h3 id="查找需要安装的Python版本："><a href="#查找需要安装的Python版本：" class="headerlink" title="查找需要安装的Python版本："></a>查找需要安装的Python版本：</h3><pre class=" language-bash"><code class="language-bash">$ pyenv <span class="token function">install</span> -l
+<h4 id="查找需要安装的Python版本："><a href="#查找需要安装的Python版本：" class="headerlink" title="查找需要安装的Python版本："></a>查找需要安装的Python版本：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv <span class="token function">install</span> -l
   <span class="token punctuation">..</span>.
   <span class="token punctuation">..</span>.
   3.8.2
@@ -470,11 +470,11 @@ See `pyenv <span class="token function">help</span> <span class="token operator"
   <span class="token punctuation">..</span>.
   <span class="token punctuation">..</span>.
 </code></pre>
-<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>找到自己需要的版本，pyenv默认从python官网下载tar包，国内访问速度很慢，timeout也正常。可以考虑换国内镜像，方法放在后面。</p>
+<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>找到自己需要的版本，pyenv默认从python官网下载tar包，国内访问速度很慢，timeout也正常。可以考虑换国内镜像，方法放在后面。</p>
 <pre class=" language-bash"><code class="language-bash">$ pyenv <span class="token function">install</span> 3.x.x
 </code></pre>
 <p>这样就算安装完成了。</p>
-<h3 id="切换版本："><a href="#切换版本：" class="headerlink" title="切换版本："></a>切换版本：</h3><pre class=" language-bash"><code class="language-bash">$ pyenv versions
+<h4 id="切换版本："><a href="#切换版本：" class="headerlink" title="切换版本："></a>切换版本：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv versions
 *  system
   3.8.5 <span class="token punctuation">(</span>set by /root/.pyenv/version<span class="token punctuation">)</span>
 $ pyenv global 3.8.5
@@ -482,11 +482,11 @@ $ pyenv version
 3.8.5 <span class="token punctuation">(</span>set by /root/.pyenv/version<span class="token punctuation">)</span>
 </code></pre>
 <p>（注意切换回系统自带版本的时候， <code>pyenv global system</code>）  </p>
-<h2 id="换源："><a href="#换源：" class="headerlink" title="换源："></a>换源：</h2><p>这里我使用的是淘宝的源 <code>https://npm.taobao.org/mirrors/python/</code><br>pyenv 没有配置源地址的地方，不过我们可以变通一下。<br>它安装 Python 的流程就是先将把包下载到 <code>~/.pyenv/cache</code> 目录，然后在进行安装，慢也就慢在下载的这个过程。<br>先手动将包下载到指定目录，再执行 pyenv install 即可。<br>可以精简为一个shll命令：  </p>
+<h3 id="换源："><a href="#换源：" class="headerlink" title="换源："></a>换源：</h3><p>这里我使用的是淘宝的源 <code>https://npm.taobao.org/mirrors/python/</code><br>pyenv 没有配置源地址的地方，不过我们可以变通一下。<br>它安装 Python 的流程就是先将把包下载到 <code>~/.pyenv/cache</code> 目录，然后在进行安装，慢也就慢在下载的这个过程。<br>先手动将包下载到指定目录，再执行 pyenv install 即可。<br>可以精简为一个shll命令：  </p>
 <pre class=" language-bash"><code class="language-bash">v<span class="token operator">=</span>3.8.5<span class="token punctuation">;</span> curl -L https://npm.taobao.org/mirrors/python/<span class="token variable">$v</span>/Python-<span class="token variable">$v</span>.tar.xz -o ~/.pyenv/cache/Python-<span class="token variable">$v</span>.tar.xz<span class="token punctuation">;</span> pyenv <span class="token function">install</span> <span class="token variable">$v</span>
 </code></pre>
 <p>或者  </p>
-<h3 id="一劳永逸："><a href="#一劳永逸：" class="headerlink" title="一劳永逸："></a>一劳永逸：</h3><p>可以写在~/.bashrc </p>
+<h4 id="一劳永逸："><a href="#一劳永逸：" class="headerlink" title="一劳永逸："></a>一劳永逸：</h4><p>可以写在~/.bashrc </p>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> pyinstall<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     v<span class="token operator">=</span><span class="token variable">$1</span>
     <span class="token keyword">echo</span> <span class="token string">'准备安装 Python'</span> <span class="token variable">$v</span>
@@ -497,7 +497,7 @@ $ pyenv version
 <p>写在<code>~/.bashrc</code> 保存，使改动生效<code>source ~/.bashrc</code> 。<br>对了，第一次运行的话，需要在pyenv下创建一下缓存目录：</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">mkdir</span> ~/.pyenv/cache
 </code></pre>
-<h3 id="使用换源的安装命令："><a href="#使用换源的安装命令：" class="headerlink" title="使用换源的安装命令："></a>使用换源的安装命令：</h3><pre class=" language-bash"><code class="language-bash">$ pyinstall 3.9.16
+<h4 id="使用换源的安装命令："><a href="#使用换源的安装命令：" class="headerlink" title="使用换源的安装命令："></a>使用换源的安装命令：</h4><pre class=" language-bash"><code class="language-bash">$ pyinstall 3.9.16
 准备安装 Python 3.9.16
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
