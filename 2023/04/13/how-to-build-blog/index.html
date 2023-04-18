@@ -20,7 +20,7 @@
 
 
     <title>如何快速搭建自己的专属博客 | Dreamer</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     
 
 
@@ -28,29 +28,31 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/awesome/css/all.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/materialize/materialize.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/aos/aos.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/animate/animate.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/lightGallery/css/lightgallery.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/css/matery.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/css/my.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/css/dark.css" media="none" onload="if(media!='all')media='all'">
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
 
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/css/post.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
 
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
     
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -64,7 +66,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Dreamer</span>
                 </a>
@@ -157,7 +159,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Dreamer</div>
         <div class="logo-desc">
@@ -251,7 +253,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -266,10 +268,12 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -317,14 +321,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5k
+                    5.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    20 分
+                    21 分
                 </div>
                 
 
@@ -353,6 +357,7 @@ $ v18.16.0
 $ <span class="token function">npm</span> -v
 $ 9.5.1
 </code></pre>
+<h4 id="npm-error"><a href="#npm-error" class="headerlink" title="npm error"></a>npm error</h4><p>在使用npm的时候可能会有一个问题 <a href="/2023/04/18/npm-error/" title="Error: EACCES: permission denied 解决方法">Error: EACCES: permission denied</a>，遇到的可以看一下。</p>
 <h3 id="2-安装git"><a href="#2-安装git" class="headerlink" title="2.安装git"></a>2.安装git</h3><p>命令行安装即可。</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> brew <span class="token function">install</span> <span class="token function">git</span>
 </code></pre>
@@ -361,12 +366,36 @@ $ 9.5.1
 </code></pre>
 <h3 id="3-github配置"><a href="#3-github配置" class="headerlink" title="3.github配置"></a>3.github配置</h3><p>首先没有<a target="_blank" rel="noopener" href="https://github.com/">github</a>账号的，要去注册下github的账号。 </p>
 <p>然后新建代码仓库，注意代码仓库的名字一定要是这样<code>&lt;your github name&gt;.github.io</code>.  </p>
-<p>接下来在github添加你的SSH Key，因为要频繁的push代码。  </p>
-<p>接下来在本地设置git信息。</p>
+<p>接下来在github添加你的SSH Key，因为要频繁的push代码，如果走https的方式，每次都需要输入账号密码，非常麻烦。而采用ssh的方式，就不再需要输入，只需要在github自己账号下配置一个ssh key即可。</p>
+<h4 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h4><p>git使用SSH配置， 初始需要以下三个步骤：</p>
+<ul>
+<li>使用秘钥生成工具生成rsa秘钥和公钥</li>
+<li>将rsa公钥添加到代码托管平台</li>
+<li>将rsa秘钥添加到ssh-agent中，为ssh client指定使用的秘钥文件</li>
+</ul>
+<p>具体操作如下：</p>
+<h5 id="a-检查本地主机是否已经存在ssh-key"><a href="#a-检查本地主机是否已经存在ssh-key" class="headerlink" title="a.检查本地主机是否已经存在ssh key"></a>a.检查本地主机是否已经存在ssh key</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">cd</span> ~/.ssh
+$ <span class="token function">ls</span>
+</code></pre>
+<p>看是否存在 id_rsa 和 id_rsa.pub文件，如果存在，说明已经有SSH Key，直接跳到3。</p>
+<h5 id="b-生成ssh-key"><a href="#b-生成ssh-key" class="headerlink" title="b.生成ssh key"></a>b.生成ssh key</h5><p>如果不存在ssh key，使用如下命令生成:</p>
+<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"xxx@xxx.com"</span>
+<span class="token comment" spellcheck="true"># 执行后一直回车即可</span>
+</code></pre>
+<h5 id="c-获取ssh-key公钥内容（id-rsa-pub）"><a href="#c-获取ssh-key公钥内容（id-rsa-pub）" class="headerlink" title="c.获取ssh key公钥内容（id_rsa.pub）"></a>c.获取ssh key公钥内容（id_rsa.pub）</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">cd</span> ~/.ssh
+$ <span class="token function">cat</span> id_rsa.pub
+</code></pre>
+<p>这时会打印<code>id_rsa.pub</code>的内容，复制一下。  </p>
+<h5 id="d-Github账号上添加公钥"><a href="#d-Github账号上添加公钥" class="headerlink" title="d.Github账号上添加公钥"></a>d.Github账号上添加公钥</h5><p>github右上角头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key<br>把刚才复制的内容粘贴上去保存即可。</p>
+<h5 id="e-验证是否设置成功"><a href="#e-验证是否设置成功" class="headerlink" title="e.验证是否设置成功"></a>e.验证是否设置成功</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">ssh</span> -T git@github.com
+Welcome to Github, @xxx<span class="token operator">!</span>
+</code></pre>
+<p>显示欢迎信息表明设置成功。设置成功后，即可不需要账号密码clone和push代码。<br>接下来在本地设置git信息。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"你注册时的用户名"</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"你注册时的邮箱"</span>
 </code></pre>
-<h2 id="三、博客初始化"><a href="#三、博客初始化" class="headerlink" title="三、博客初始化"></a>三、博客初始化</h2><p>1.命令行安装hexo （安装博客框架）</p>
+<h2 id="三、博客初始化"><a href="#三、博客初始化" class="headerlink" title="三、博客初始化"></a>三、博客初始化</h2><p>安装好node.js后，第一次使用npm可能会报错，可以参考<a href="#npm-error">npm error</a>。</p>
+<p>1.命令行安装hexo （安装博客框架）</p>
 <p>命令：<code>npm install -g hexo-cli</code></p>
 <p>安装后验证：<code>hexo -v</code> 出现版本号说明安装成功</p>
 <p>2.在本地新建一个名为blog的目录（位置、名字随意），比如我的是~/blog。<br>命令：<code>mkdir -p ~/blog</code></p>
@@ -375,15 +404,17 @@ $ 9.5.1
 <p><code>hexo g</code> 生成命令</p>
 <p><code>hexo s</code> 启动服务<br>说明：<code>hexo s</code> 是开启本地预览服务，打开浏览器访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 即可看到内容，说明博客初始化以及成功！</p>
 <p>到此博客的本地初始化便完成了，接下来设置下博客的部署地址,推送博客到github。</p>
-<h2 id="四、部署博客到Github"><a href="#四、部署博客到Github" class="headerlink" title="四、部署博客到Github"></a>四、部署博客到Github</h2><p>1.在<code>~/blog</code>目录下安装 <code>hexo-deployer-git</code> 插件。<br>命令：<code>npm install hexo-deployer-git --save</code></p>
+<h2 id="四、部署博客到Github"><a href="#四、部署博客到Github" class="headerlink" title="四、部署博客到Github"></a>四、部署博客到Github</h2><h3 id="1-安装git插件"><a href="#1-安装git插件" class="headerlink" title="1.安装git插件"></a>1.安装git插件</h3><p>在<code>~/blog</code>目录下安装 <code>hexo-deployer-git</code> 插件。 </p>
+<p>命令：<code>npm install hexo-deployer-git --save</code>  </p>
 <p>说明：必须安装，否则执行<code>hexo d</code> 的话会报错</p>
-<p>2.编辑<code>~/blog</code>目录下的 _config.yml 文件, 在文件末尾修改配置文件：</p>
+<h3 id="2-设置部署仓库地址"><a href="#2-设置部署仓库地址" class="headerlink" title="2.设置部署仓库地址"></a>2.设置部署仓库地址</h3><p>编辑<code>~/blog</code>目录下的 _config.yml 文件, 在文件末尾修改配置文件：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
   <span class="token key atrule">type</span><span class="token punctuation">:</span> git
   <span class="token key atrule">repo</span><span class="token punctuation">:</span> github上对应仓库的ssh链接，如：     git@github.com<span class="token punctuation">:</span>xxx/xxx.github.io.git
   <span class="token key atrule">branch</span><span class="token punctuation">:</span> main
 </code></pre>
-<p>注意：现在github的主分支是<code>main</code>。<br>3.部署<br><code>hexo d</code> 推送代码到远程仓库。<br>一些顺利的话，大概几分钟后，在浏览器输入<code>username.github.io</code> 就可以看到你的博客了，就算本地电脑关机也没事。<br>常用命令说明：  </p>
+<p>注意：现在github的主分支是<code>main</code>。</p>
+<h3 id="3-部署"><a href="#3-部署" class="headerlink" title="3.部署"></a>3.部署</h3><p><code>hexo d</code> 推送代码到远程仓库。<br>一些顺利的话，大概几分钟后，在浏览器输入<code>username.github.io</code> 就可以看到你的博客了，就算本地电脑关机也没事。<br>常用命令说明：  </p>
 <table>
 <thead>
 <tr>
@@ -423,7 +454,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> categories
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"categories"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"categories"</span>
 <span class="token punctuation">---</span>
@@ -434,7 +465,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> tags
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 18:23:38</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 18:23:38</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"tags"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"tags"</span>
 <span class="token punctuation">---</span>
@@ -445,7 +476,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/about/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> about
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"about"</span>
 <span class="token punctuation">---</span>
@@ -456,7 +487,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/contact/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> contact
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"contact"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"contact"</span>
 <span class="token punctuation">---</span>
@@ -470,7 +501,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/friends/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> friends
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-12-12 21:25:30</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 21:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"friends"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"friends"</span>
 <span class="token punctuation">---</span>
@@ -502,7 +533,7 @@ $ 9.5.1
 <p>编辑你刚刚新建的页面文件 <code>/source/404/index.md</code>，至少需要以下内容：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token number">404</span>
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-30 17:25:30</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 17:25:30</span>
 <span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"404"</span>
 <span class="token key atrule">layout</span><span class="token punctuation">:</span> <span class="token string">"404"</span>
 <span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">"Oops～，我崩溃了！找不到你想要的页面 :("</span>
@@ -710,7 +741,7 @@ $ 9.5.1
 <p><code>id</code>获取方法示例: 浏览器打开网易云音乐，点击我喜欢的音乐歌单，浏览器地址栏后面会有一串数字，<code>playlist</code>的<code>id</code></p>
 <p>即为这串数字。</p>
 </blockquote>
-<h2 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<h2 id="六、文章-Front-matter-介绍"><a href="#六、文章-Front-matter-介绍" class="headerlink" title="六、文章 Front-matter 介绍"></a>六、文章 Front-matter 介绍</h2><h3 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h3><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
 <table>
 <thead>
 <tr>
@@ -817,15 +848,15 @@ $ 9.5.1
 </code></pre>
 <h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> typora<span class="token punctuation">-</span>vue<span class="token punctuation">-</span>theme主题介绍
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-07 09:25:00</span>
-<span class="token key atrule">author</span><span class="token punctuation">:</span> 赵奇
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2023-04-10 09:25:00</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> Wyx
 <span class="token key atrule">img</span><span class="token punctuation">:</span> /source/images/xxx.jpg
 <span class="token key atrule">top</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token key atrule">hide</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 <span class="token key atrule">cover</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token key atrule">coverImg</span><span class="token punctuation">:</span> /images/1.jpg
 <span class="token key atrule">password</span><span class="token punctuation">:</span> 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
-<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">toc</span><span class="token punctuation">:</span> false 目录
 <span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 <span class="token key atrule">summary</span><span class="token punctuation">:</span> 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
 <span class="token key atrule">categories</span><span class="token punctuation">:</span> Markdown
@@ -834,7 +865,7 @@ $ 9.5.1
   <span class="token punctuation">-</span> Markdown
 <span class="token punctuation">---</span>
 </code></pre>
-<h2 id="自定制修改"><a href="#自定制修改" class="headerlink" title="自定制修改"></a>自定制修改</h2><p>在本主题的 <code>_config.yml</code> 中可以修改部分自定义信息，有以下几个部分：</p>
+<h2 id="七、主题自定制修改"><a href="#七、主题自定制修改" class="headerlink" title="七、主题自定制修改"></a>七、主题自定制修改</h2><p>在本主题的 <code>_config.yml</code> 中可以修改部分自定义信息，有以下几个部分：</p>
 <ul>
 <li>菜单</li>
 <li>我的梦想</li>
@@ -946,12 +977,12 @@ $ 9.5.1
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 <div id="article-share">
 
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -976,10 +1007,10 @@ $ 9.5.1
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1040,18 +1071,17 @@ $ 9.5.1
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/04/13/how-to-build-blog/">
+                <a href="/2023/04/18/npm-error/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="如何快速搭建自己的专属博客">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Error: EACCES: permission denied 解决方法">
                         
-                        <span class="card-title">如何快速搭建自己的专属博客</span>
+                        <span class="card-title">Error: EACCES: permission denied 解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1061,27 +1091,30 @@ $ 9.5.1
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E7%AB%A0/" class="post-category">
-                                    文章
+                            <a href="/categories/npm/" class="post-category">
+                                    npm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E6%96%87/">
-                        <span class="chip bg-color">第一篇博文</span>
+                    <a href="/tags/npm/">
+                        <span class="chip bg-color">npm</span>
+                    </a>
+                    
+                    <a href="/tags/node-js/">
+                        <span class="chip bg-color">node.js</span>
                     </a>
                     
                 </div>
@@ -1099,7 +1132,7 @@ $ 9.5.1
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="如何快速搭建自己的专属博客">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="如何快速搭建自己的专属博客">
                         
                         <span class="card-title">如何快速搭建自己的专属博客</span>
                     </div>
@@ -1184,25 +1217,106 @@ $ 9.5.1
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
@@ -1213,7 +1327,7 @@ $ 9.5.1
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         
@@ -1250,8 +1364,8 @@ $ 9.5.1
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/aplayer/Meting.min.js"></script>
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
 
     
 
@@ -1267,7 +1381,7 @@ $ 9.5.1
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">5k</span>
+                        class="white-color">7k</span>
             
             
             
@@ -1512,12 +1626,12 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     
 
@@ -1533,7 +1647,7 @@ $(function () {
 
      
         <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/others/TencentCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
         <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
@@ -1556,10 +1670,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1572,17 +1686,17 @@ $(function () {
     <script type="text/javascript" color="0,0,0"
         pointColor="0,0,0" opacity='0.5'
         zIndex="-1" count="199"
-        src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/background/canvas-nest.js"></script>
+        src="/libs/background/canvas-nest.js"></script>
     
 
     
 
     
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
-    <script src="https://cdn.jsdelivr.net/gh/dreamerwyx/dreamerwyx.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
 </body>
