@@ -417,6 +417,19 @@
 </header>
 
     
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -515,7 +528,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>记录下博客搭建过程，首先介绍下搭建的框架：<br><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架,Hexo 使用 <a href="hhttps://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+                <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>记录下博客搭建过程，首先介绍下搭建的框架：<br><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> 是一个快速、简洁且高效的博客框架,Hexo 使用 <a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
 <p>介绍完了，下面开始搭建喽！</p>
 <h2 id="二、博客环境搭建"><a href="#二、博客环境搭建" class="headerlink" title="二、博客环境搭建"></a>二、博客环境搭建</h2><p>我的系统是<code>macOs</code>，和<code>linux</code>的操作基本没差别。</p>
 <h3 id="1-安装Node-js"><a href="#1-安装Node-js" class="headerlink" title="1.安装Node.js"></a>1.安装Node.js</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download">Node.js</a>官网下载 node.js 的安装程序，根据你电脑系统的配置信息，下载对应的安装程序，然后就是打开安装包，按照引导一步一步进行就好了。<br>安装好后，在命令行执行 <code>node -v</code> 和 <code>npm -v</code>，打印出版本号就是安装成功了。</p>
@@ -1515,7 +1528,7 @@ Welcome to Github, @xxx<span class="token operator">!</span>
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">7.2k</span>
+                        class="white-color">26.2k</span>
             
             
             
