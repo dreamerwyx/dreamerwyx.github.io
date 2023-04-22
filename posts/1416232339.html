@@ -754,8 +754,6 @@ array<span class="token punctuation">[</span>2<span class="token punctuation">]<
 array<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span><span class="token operator">=</span>valA <span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token operator">=</span>valB <span class="token punctuation">[</span>2<span class="token punctuation">]</span><span class="token operator">=</span>valC<span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 另一种方式</span>
 array<span class="token operator">=</span><span class="token punctuation">(</span>valA valB valC<span class="token punctuation">)</span>               <span class="token comment" spellcheck="true"># 另一种方式</span>
 
-
-
 <span class="token keyword">declare</span> -a                <span class="token comment" spellcheck="true"># 查看所有数组</span>
 <span class="token keyword">declare</span> -f                <span class="token comment" spellcheck="true"># 查看所有函数</span>
 <span class="token keyword">declare</span> -F                <span class="token comment" spellcheck="true"># 查看所有函数，仅显示函数名</span>
@@ -776,8 +774,6 @@ $<span class="token punctuation">{</span>variable<span class="token comment" spe
 <span class="token variable">${variable%%pattern}</span>      <span class="token comment" spellcheck="true"># 如果变量尾部匹配 pattern，则删除最大匹配部分返回剩下的</span>
 <span class="token variable">${variable/pattern/str}</span>   <span class="token comment" spellcheck="true"># 将变量中第一个匹配 pattern 的替换成 str，并返回</span>
 <span class="token variable">${variable//pattern/str}</span>  <span class="token comment" spellcheck="true"># 将变量中所有匹配 pattern 的地方替换成 str 并返回</span>
-
-
 
 *<span class="token punctuation">(</span>patternlist<span class="token punctuation">)</span>            <span class="token comment" spellcheck="true"># 零次或者多次匹配</span>
 +<span class="token punctuation">(</span>patternlist<span class="token punctuation">)</span>            <span class="token comment" spellcheck="true"># 一次或者多次匹配</span>
