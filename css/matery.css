@@ -2294,3 +2294,12 @@ body.DarkMode .theme-btn:hover {
     font-weight: 900;
     color: #d9534f;
 }
+
+@font-face{
+    font-family: 'myFont';
+    src: url('../font/OPPOSans-R.ttf');
+}
+
+body{
+    font-family: 'myFont';
+}
