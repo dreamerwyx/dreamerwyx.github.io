@@ -4,10 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Linux管理Python版本, Dreamer">
-    <meta name="description" content="前言不同的脚本，项目需要用的Python版本不一定是相同的。那怎么让多个版本共存，并且可以任意切换呢？
-下面介绍了两种方法，Ubuntu应该是两种都适用的，MacOS实测适用方法二。
-方法一：update-alternativesupdat">
+    <meta name="keywords" content="git常用操作, Dreamer">
+    <meta name="description" content="一、 Git配置1.安装Git$ sudo apt inatsll git
+
+2.绑定git仓库本地命令行生成密钥，替换成自己邮箱，然后一路回车。
+$ ssh-keygen -t rsa -C &#34;你的邮箱&#34;
+$ cat ~/.ssh/id_">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Linux管理Python版本 | Dreamer</title>
+    <title>git常用操作 | Dreamer</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -452,12 +454,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Linux管理Python版本</h1>
+                    <h1 class="description center-align post-title">git常用操作</h1>
                 </div>
             </div>
         </div>
@@ -481,12 +483,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
-                            </a>
-                        
-                            <a href="/tags/pyenv/">
-                                <span class="chip bg-color">pyenv</span>
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
                             </a>
                         
                     </div>
@@ -497,8 +495,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/tools/" class="post-category">
+                                tools
                             </a>
                         
                     </div>
@@ -510,28 +508,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-04-18
+                    2023-05-01
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-04-22
+                    2023-05-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    5 分
                 </div>
                 
 
@@ -551,161 +549,91 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不同的脚本，项目需要用的Python版本不一定是相同的。那怎么让多个版本共存，并且可以任意切换呢？</p>
-<p>下面介绍了两种方法，<code>Ubuntu</code>应该是两种都适用的，<code>MacOS</code>实测适用方法二。</p>
-<h2 id="方法一：update-alternatives"><a href="#方法一：update-alternatives" class="headerlink" title="方法一：update-alternatives"></a>方法一：update-alternatives</h2><p><code>update-alternatives</code>命令用于处理 Linux 系统中软件版本的切换，使其多版本共存。（update-alternatives可以管理很多软件的版本切换，这里介绍下以python为例）<br>使用这种方法管理python版本需要和apt一起使用。<br>首先系统自带的python版本是3.6.9，现在需要一个<code>&gt;=3.7</code>的版本。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt update
-<span class="token function">sudo</span> apt <span class="token function">install</span> python3.7
+                <h2 id="一、-Git配置"><a href="#一、-Git配置" class="headerlink" title="一、 Git配置"></a>一、 Git配置</h2><h3 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> apt inatsll <span class="token function">git</span>
 </code></pre>
-<p>此时python3.7已经安装，但默认命令python3指向的还是3.6.9，下面切换python的默认指向。</p>
-<h3 id="切换默认指向"><a href="#切换默认指向" class="headerlink" title="切换默认指向"></a>切换默认指向</h3><p>使用update-alternatives，给python版本编号。<br>要先安装update-alternatives，先添加两个指向。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
-<span class="token function">sudo</span> update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 2
+<h3 id="2-绑定git仓库"><a href="#2-绑定git仓库" class="headerlink" title="2.绑定git仓库"></a>2.绑定git仓库</h3><p>本地命令行生成密钥，替换成自己邮箱，然后一路回车。</p>
+<pre class=" language-bash"><code class="language-bash">$ ssh-keygen -t rsa -C <span class="token string">"你的邮箱"</span>
+$ <span class="token function">cat</span> ~/.ssh/id_rsa.pub 
 </code></pre>
-<p>然后确定默认指向，执行以下命令后选择2即可（后面可以随时输入这条命令切换版本）。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> update-alternatives --config python3
+<p>将生成的公钥打印出来复制，将这串文本复制粘贴到Gitlab的profile/keys中。</p>
+<h4 id="Add-key"><a href="#Add-key" class="headerlink" title="Add key"></a>Add key</h4><p>输入命令检查是否绑定成功,如果出现Welcome to GitLab, @xxx!!则绑定成功。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">ssh</span> -T git@gitlab.xxx.com
 </code></pre>
-<p>这样就完成了python的版本切换。  </p>
-<h3 id="总结一下"><a href="#总结一下" class="headerlink" title="总结一下"></a>总结一下</h3><ul>
-<li>优点：安装比较方便，比较适合对python版本要求不是很严格的用户。  </li>
-<li>缺点：apt支持的python版本有限，特别新的版本一般是没有的。</li>
-</ul>
-<h2 id="方法二：Pyenv"><a href="#方法二：Pyenv" class="headerlink" title="方法二：Pyenv"></a>方法二：Pyenv</h2><p><a target="_blank" rel="noopener" href="https://github.com/pyenv/pyenv">pyenv</a>做什么…</p>
+<h3 id="3-配置用户名和邮箱："><a href="#3-配置用户名和邮箱：" class="headerlink" title="3.配置用户名和邮箱："></a>3.配置用户名和邮箱：</h3><p>查看配置信息，一开始为空:</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --list
+</code></pre>
+<p>全局配置，对所有代码库生效:</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --global user.name <span class="token string">"你的名字"</span>
+$ <span class="token function">git</span> config --global user.email <span class="token string">"你的邮箱"</span>
+</code></pre>
+<p>局部配置，只对当前的代码库有效:  </p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> config --local user.name <span class="token string">"你的名字"</span>
+$ <span class="token function">git</span> config --local user.email <span class="token string">"你的邮箱"</span>
+</code></pre>
+<p>配置后，远程仓库提交的commit里对应的用户即为 <code>user.name</code>。</p>
+<h2 id="二、Git基本操作"><a href="#二、Git基本操作" class="headerlink" title="二、Git基本操作"></a>二、Git基本操作</h2><h3 id="1-创建版本库"><a href="#1-创建版本库" class="headerlink" title="1.创建版本库"></a>1.创建版本库</h3><p>创建版本库有两种方式，一种是将本地的文件夹直接变成一个git仓库，另一种是直接将远程的仓库克隆到本地。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init <span class="token comment" spellcheck="true"># 将本地文件夹变为一个git仓库</span>
+$ <span class="token function">git</span> clone <span class="token operator">&lt;</span>url<span class="token operator">></span> <span class="token comment" spellcheck="true"># 将远程仓库克隆到本地</span>
+</code></pre>
+<p><code>&lt;url&gt;</code> 分为两种类型:<br><code>git@xxx.git</code><br><code>https:xxx.git</code><br>其中https的链接在后续操作中需要多次输入账户名，密码。</p>
+<h3 id="2-修改与提交操作"><a href="#2-修改与提交操作" class="headerlink" title="2.修改与提交操作"></a>2.修改与提交操作</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add <span class="token operator">&lt;</span>file<span class="token operator">></span> <span class="token comment" spellcheck="true"># 将单个文件从工作区添加到暂存区</span>
+$ <span class="token function">git</span> add <span class="token keyword">.</span> <span class="token comment" spellcheck="true"># 将所有文件添加到暂存区</span>
+$ <span class="token function">git</span> commit -m <span class="token string">"messenge"</span> <span class="token comment" spellcheck="true"># 将暂存区文件提交到本地仓库</span>
+$ <span class="token function">git</span> status <span class="token comment" spellcheck="true"># 查看工作区状态，显示有变更的文件。</span>
+$ <span class="token function">git</span> <span class="token function">diff</span> <span class="token comment" spellcheck="true"># 比较文件的不同，即暂存区和工作区的差异。</span>
+</code></pre>
+<h3 id="3-远程操作"><a href="#3-远程操作" class="headerlink" title="3.远程操作"></a>3.远程操作</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> push origin master <span class="token comment" spellcheck="true"># 将本地的master分支推送到远程对应的分支</span>
+$ <span class="token function">git</span> pull  <span class="token comment" spellcheck="true"># 下载远程代码并合并，相当于git fetch + git pull</span>
+$ <span class="token function">git</span> fetch   <span class="token comment" spellcheck="true"># 从远程获取代码库，但不进行合并操作</span>
+
+$ <span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>url<span class="token operator">></span> <span class="token comment" spellcheck="true"># 将远程仓库与本地仓库关联起来</span>
+$ <span class="token function">git</span> remote -v <span class="token comment" spellcheck="true"># 查看远程库信息</span>
+</code></pre>
+<h3 id="4-合并最近两次commit"><a href="#4-合并最近两次commit" class="headerlink" title="4.合并最近两次commit"></a>4.合并最近两次commit</h3><p>一次<code>commit</code>的时候，发现有段代码没写好，就补了一句以后再<code>commit</code>了一遍，这样就有两条<code>commit</code>语句了。应该把之后补的那条合并到前面去。<br>这时候就需要<code>git rebase</code>语句：</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> rebase -i HEAD~2
+</code></pre>
+<p>当前我们只要知道 <code>pick</code> 和 <code>squash</code> 这两个命令即可。</p>
 <ul>
-<li>允许您基于每个用户更改全局 Python 版本。</li>
-<li>为每个项目的 Python 版本提供支持。</li>
-<li>允许您使用环境变量覆盖 Python 版本。</li>
-<li>一次搜索来自多个 Python 版本的命令。</li>
+<li>pick 的意思是要会执行这个 commit</li>
+<li>squash 的意思是这个 commit 会被合并到前一个commit<br><img src="/!%5B%5D(https:/images.dreamerwyx.top/img/%E6%88%AA%E5%B1%8F2023-05-03%2016.32.29.png)"><br>根据提示，把第二个“pick”改成“squash”，这样就可以把第二个commit合并到到第一个里，修改并保存后会自动进入下一个页面（这里忘记截图了），<br>然后修改commit信息，保存即可，此时查看<code>git log</code>，commit已经改变了。</li>
 </ul>
-<p>简单来说就是一个简单的Python版本管理器，可以轻松地在各个Python版本之间进行切换。<br>Github 30.8k Star,有点东西。。</p>
-<h3 id="安装（推荐手动安装）："><a href="#安装（推荐手动安装）：" class="headerlink" title="安装（推荐手动安装）："></a>安装（推荐手动安装）：</h3><h4 id="自动安装（需要梯子）"><a href="#自动安装（需要梯子）" class="headerlink" title="自动安装（需要梯子）:"></a>自动安装（需要梯子）:</h4><pre class=" language-bash"><code class="language-bash">curl https://pyenv.run <span class="token operator">|</span> <span class="token function">bash</span>
+<h3 id="5-撤销与回退操作"><a href="#5-撤销与回退操作" class="headerlink" title="5.撤销与回退操作"></a>5.撤销与回退操作</h3><h4 id="①撤销操作："><a href="#①撤销操作：" class="headerlink" title="①撤销操作："></a>①撤销操作：</h4><p>当修改了工作区/暂存区的文件，但是还没有commit时，想要撤销之前的操作：</p>
+<h5 id="场景1：当你改乱了工作区某个文件的内容，但还没有add到暂存区"><a href="#场景1：当你改乱了工作区某个文件的内容，但还没有add到暂存区" class="headerlink" title="场景1：当你改乱了工作区某个文件的内容，但还没有add到暂存区"></a>场景1：当你改乱了工作区某个文件的内容，但还没有add到暂存区</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token operator">&lt;</span>file<span class="token operator">></span> <span class="token comment" spellcheck="true"># 撤销工作区的某个文件到和暂存区一样的状态</span>
 </code></pre>
-<h4 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装:"></a>手动安装:</h4><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># clone,编译</span>
-<span class="token function">git</span> clone https://github.com/pyenv/pyenv.git ~/.pyenv
-<span class="token function">cd</span> ~/.pyenv <span class="token operator">&amp;&amp;</span> src/configure <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> -C src
-<span class="token comment" spellcheck="true"># 配置环境变量</span>
-<span class="token keyword">echo</span> <span class="token string">'export PYENV_ROOT="<span class="token variable">$HOME</span>/.pyenv"'</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token keyword">echo</span> <span class="token string">'command -v pyenv >/dev/null || export PATH="<span class="token variable">$PYENV_ROOT</span>/bin:<span class="token variable">$PATH</span>"'</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token keyword">echo</span> <span class="token string">'eval "<span class="token variable"><span class="token variable">$(</span>pyenv init -<span class="token variable">)</span></span>"'</span> <span class="token operator">>></span> ~/.bashrc
-<span class="token function">source</span> ~/.bashrc
+<h5 id="场景2：当乱改了工作区某个文件的内容，并且git-add到了暂存区"><a href="#场景2：当乱改了工作区某个文件的内容，并且git-add到了暂存区" class="headerlink" title="场景2：当乱改了工作区某个文件的内容，并且git add到了暂存区"></a>场景2：当乱改了工作区某个文件的内容，并且git add到了暂存区</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>file<span class="token operator">></span> <span class="token comment" spellcheck="true"># 第1步，将暂存区的文件修改撤销掉</span>
+$ <span class="token function">git</span> checkout <span class="token operator">&lt;</span>file<span class="token operator">></span> <span class="token comment" spellcheck="true"># 第2步，将工作区的文件修改撤销掉</span>
 </code></pre>
-<p>然后测试一下，打印出版本就是安装成功了。</p>
-<pre class=" language-bash"><code class="language-bash">$ pyenv -v
-$ pyenv 2.3.17-5-ga57e0b50
+<h5 id="场景3：乱改了很多文件，想回到最新一次提交时的状态"><a href="#场景3：乱改了很多文件，想回到最新一次提交时的状态" class="headerlink" title="场景3：乱改了很多文件，想回到最新一次提交时的状态"></a>场景3：乱改了很多文件，想回到最新一次提交时的状态</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> reset --hard HEAD <span class="token comment" spellcheck="true"># 撤销工作区中所有未提交文件的修改内容</span>
 </code></pre>
-<h4 id="使用介绍："><a href="#使用介绍：" class="headerlink" title="使用介绍："></a>使用介绍：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv
-pyenv 2.3.17-5-ga57e0b50
-Usage: pyenv <span class="token operator">&lt;</span>command<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&lt;</span>args<span class="token operator">></span><span class="token punctuation">]</span>
-
-Some useful pyenv commands are:
-   --version   Display the version of pyenv
-   commands    List all available pyenv commands
-   <span class="token function">exec</span>        Run an executable with the selected Python version
-   global      Set or show the global Python version<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-   <span class="token function">help</span>        Display <span class="token function">help</span> <span class="token keyword">for</span> a <span class="token function">command</span>
-   hooks       List hook scripts <span class="token keyword">for</span> a given pyenv <span class="token function">command</span>
-   init        Configure the shell environment <span class="token keyword">for</span> pyenv
-   <span class="token function">install</span>     Install a Python version using python-build
-   latest      Print the latest installed or known version with the given prefix
-   local       Set or show the local application-specific Python version<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-   prefix      Display prefixes <span class="token keyword">for</span> Python versions
-   rehash      Rehash pyenv shims <span class="token punctuation">(</span>run this after installing executables<span class="token punctuation">)</span>
-   root        Display the root directory where versions and shims are kept
-   shell       Set or show the shell-specific Python version
-   shims       List existing pyenv shims
-   uninstall   Uninstall Python versions
-   version     Show the current Python version<span class="token punctuation">(</span>s<span class="token punctuation">)</span> and its origin
-   version-file   Detect the <span class="token function">file</span> that sets the current pyenv version
-   version-name   Show the current Python version
-   version-origin   Explain how the current Python version is <span class="token keyword">set</span>
-   versions    List all Python versions available to pyenv
-   whence      List all Python versions that contain the given executable
-   <span class="token function">which</span>       Display the full path to an executable
-
-See `pyenv <span class="token function">help</span> <span class="token operator">&lt;</span>command<span class="token operator">></span>' <span class="token keyword">for</span> information on a specific command.
+<h4 id="②回退操作："><a href="#②回退操作：" class="headerlink" title="②回退操作："></a>②回退操作：</h4><p>当已经进行了commit操作，需要回退到之前的版本：</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> reset --hard HEAD^ <span class="token comment" spellcheck="true"># 回退到上次提交的状态</span>
+$ <span class="token function">git</span> reset --hard HEAD~n <span class="token comment" spellcheck="true"># 回退到n个版本前的状态</span>
+$ <span class="token function">git</span> reset --hard HEAD commitid <span class="token comment" spellcheck="true"># 回退到某一个commitid的状态</span>
+$ <span class="token function">git</span> reset --soft HEAD commitid <span class="token comment" spellcheck="true"># 回退到某一个commitid的状态，并且保留暂存区的内容</span>
+$ <span class="token function">git</span> reset --mixed<span class="token punctuation">(</span>默认<span class="token punctuation">)</span> HEAD commitid <span class="token comment" spellcheck="true"># 回退到某一个commitid的状态，并且保留工作区的内容</span>
 </code></pre>
-<p>虽然它有一大堆命令，但实际使用频率高的命令并不多，主要有以下几个：</p>
-<table>
-<thead>
-<tr>
-<th>指令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>pyenv versions</code></td>
-<td>列出系统当前所有的python版本</td>
-</tr>
-<tr>
-<td><code>pyenv version</code></td>
-<td>打印系统当前python版本</td>
-</tr>
-<tr>
-<td><code>pyenv install</code></td>
-<td>安装指定版本</td>
-</tr>
-<tr>
-<td><code>pyenv global</code></td>
-<td>设置python版本</td>
-</tr>
-<tr>
-<td><code>pyenv uninstall</code></td>
-<td>卸载指定版本</td>
-</tr>
-</tbody></table>
-<h4 id="查找需要安装的Python版本："><a href="#查找需要安装的Python版本：" class="headerlink" title="查找需要安装的Python版本："></a>查找需要安装的Python版本：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv <span class="token function">install</span> -l
-  <span class="token punctuation">..</span>.
-  <span class="token punctuation">..</span>.
-  3.8.2
-  3.8.3
-  3.8.4
-  3.8.5
-  3.8.6
-  <span class="token punctuation">..</span>.
-  <span class="token punctuation">..</span>.
-  3.9.1
-  3.9.2
-  3.9.4
-  <span class="token punctuation">..</span>.
-  <span class="token punctuation">..</span>.
+<h4 id="③找回被误删的分支："><a href="#③找回被误删的分支：" class="headerlink" title="③找回被误删的分支："></a>③找回被误删的分支：</h4><h5 id="第一步，历史操作记录"><a href="#第一步，历史操作记录" class="headerlink" title="第一步，历史操作记录"></a>第一步，历史操作记录</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> reflog show --date<span class="token operator">=</span>iso
+<span class="token comment" spellcheck="true"># git reflog用来记录你的每一次命令。</span>
+<span class="token comment" spellcheck="true"># --date=iso 表示以标准时间显示，这里要注意的是不能用git log。</span>
+<span class="token comment" spellcheck="true"># git log 命令显示从最近到最远的提交日志，当分支被删掉就找不到记录了。</span>
 </code></pre>
-<h4 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h4><p>找到自己需要的版本，pyenv默认从python官网下载tar包，国内访问速度很慢，timeout也正常。可以考虑换国内镜像，方法放在后面。</p>
-<pre class=" language-bash"><code class="language-bash">$ pyenv <span class="token function">install</span> 3.x.x
+<p>从每一次的命令里，找到你想要恢复的那次commit,也就是你删除的分支的commit。</p>
+<h5 id="第二步，在历史操作记录中找到具体commitId"><a href="#第二步，在历史操作记录中找到具体commitId" class="headerlink" title="第二步，在历史操作记录中找到具体commitId"></a>第二步，在历史操作记录中找到具体commitId</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span>  show  a02ba0262
+<span class="token comment" spellcheck="true"># 查看commitId对应的提交详情，确认是否想要恢复</span>
 </code></pre>
-<p>这样就算安装完成了。</p>
-<h4 id="切换版本："><a href="#切换版本：" class="headerlink" title="切换版本："></a>切换版本：</h4><pre class=" language-bash"><code class="language-bash">$ pyenv versions
-*  system
-  3.8.5 <span class="token punctuation">(</span>set by /root/.pyenv/version<span class="token punctuation">)</span>
-$ pyenv global 3.8.5
-$ pyenv version
-3.8.5 <span class="token punctuation">(</span>set by /root/.pyenv/version<span class="token punctuation">)</span>
+<h5 id="第三步，根据commitId恢复被删除的分支到本地"><a href="#第三步，根据commitId恢复被删除的分支到本地" class="headerlink" title="第三步，根据commitId恢复被删除的分支到本地"></a>第三步，根据commitId恢复被删除的分支到本地</h5><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> checkout -b  <span class="token operator">&lt;</span>name<span class="token operator">></span>  commitId
 </code></pre>
-<p>（注意切换回系统自带版本的时候， <code>pyenv global system</code>）  </p>
-<h3 id="换源："><a href="#换源：" class="headerlink" title="换源："></a>换源：</h3><p>这里我使用的是淘宝的源 <code>https://npm.taobao.org/mirrors/python/</code><br>pyenv 没有配置源地址的地方，不过我们可以变通一下。<br>它安装 Python 的流程就是先将把包下载到 <code>~/.pyenv/cache</code> 目录，然后在进行安装，慢也就慢在下载的这个过程。<br>先手动将包下载到指定目录，再执行 pyenv install 即可。<br>可以精简为一个shll命令：  </p>
-<pre class=" language-bash"><code class="language-bash">v<span class="token operator">=</span>3.8.5<span class="token punctuation">;</span> curl -L https://npm.taobao.org/mirrors/python/<span class="token variable">$v</span>/Python-<span class="token variable">$v</span>.tar.xz -o ~/.pyenv/cache/Python-<span class="token variable">$v</span>.tar.xz<span class="token punctuation">;</span> pyenv <span class="token function">install</span> <span class="token variable">$v</span>
+<h2 id="三、Git分支管理"><a href="#三、Git分支管理" class="headerlink" title="三、Git分支管理"></a>三、Git分支管理</h2><p>git的最强大之处就在于分支管理了，具体有两种应用场景：</p>
+<h3 id="1-多人协作："><a href="#1-多人协作：" class="headerlink" title="1.多人协作："></a>1.多人协作：</h3><p>每个人都基于主分支创建一个自己的分支，在分支上进行开发，然后再不断将写好的代码合并到主分支。</p>
+<h3 id="2-自己修复bug-x2F-增加feature："><a href="#2-自己修复bug-x2F-增加feature：" class="headerlink" title="2.自己修复bug/增加feature："></a>2.自己修复bug/增加feature：</h3><p>创建一个bug分支或者feature分支，写好代码后合并到自己的分支然后删除<code>bug/feature</code>分支。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> branch <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 创建分支</span>
+$ <span class="token function">git</span> checkout <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 切换到某个分支</span>
+$ <span class="token function">git</span> checkout -b <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 创建并切换到新分支，相当于同时执行了以上两个命令</span>
+$ <span class="token function">git</span> merge <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 合并某个分支到当前分支中，默认fast forward</span>
+$ <span class="token function">git</span> branch -a <span class="token comment" spellcheck="true"># 查看所有分支</span>
+$ <span class="token function">git</span> branch -d <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 删除分支</span>
+$ <span class="token function">git</span> branch -D <span class="token operator">&lt;</span>name<span class="token operator">></span> <span class="token comment" spellcheck="true"># 强行删除分支</span>
 </code></pre>
-<p>或者  </p>
-<h4 id="一劳永逸："><a href="#一劳永逸：" class="headerlink" title="一劳永逸："></a>一劳永逸：</h4><p>可以写在~/.bashrc </p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> pyinstall<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    v<span class="token operator">=</span><span class="token variable">$1</span>
-    <span class="token keyword">echo</span> <span class="token string">'准备安装 Python'</span> <span class="token variable">$v</span>
-    curl -L https://npm.taobao.org/mirrors/python/<span class="token variable">$v</span>/Python-<span class="token variable">$v</span>.tar.xz -o ~/.pyenv/cache/Python-<span class="token variable">$v</span>.tar.xz
-    pyenv <span class="token function">install</span> <span class="token variable">$v</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>写在<code>~/.bashrc</code> 保存，使改动生效<code>source ~/.bashrc</code> 。<br>对了，第一次运行的话，需要在pyenv下创建一下缓存目录：</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">mkdir</span> ~/.pyenv/cache
-</code></pre>
-<h4 id="使用换源的安装命令："><a href="#使用换源的安装命令：" class="headerlink" title="使用换源的安装命令："></a>使用换源的安装命令：</h4><pre class=" language-bash"><code class="language-bash">$ pyinstall 3.9.16
-准备安装 Python 3.9.16
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   145  100   145    0     0    184      0 --:--:-- --:--:-- --:--:--   184
-100 18.8M  100 18.8M    0     0  1933k      0  0:00:09  0:00:09 --:--:-- 2361k
-Installing Python-3.9.16<span class="token punctuation">..</span>.
-Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
-</code></pre>
-<p>其他指令还是和原来一样的。</p>
 
                 
             </div>
@@ -732,7 +660,7 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://dreamerwyx.top/posts/398695014.html">https://dreamerwyx.top/posts/398695014.html</a>
+                    <a href="https://dreamerwyx.top/posts/807237865.html">https://dreamerwyx.top/posts/807237865.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -770,12 +698,8 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
-                                </a>
-                            
-                                <a href="/tags/pyenv/">
-                                    <span class="chip bg-color">pyenv</span>
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
                                 </a>
                             
                         </div>
@@ -888,13 +812,13 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/807237865.html">
+                <a href="/posts/2295805762.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git常用操作">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="docker搭建ELK日志分析系统">
                         
-                        <span class="card-title">git常用操作</span>
+                        <span class="card-title">docker搭建ELK日志分析系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -922,8 +846,12 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/ELK/">
+                        <span class="chip bg-color">ELK</span>
+                    </a>
+                    
+                    <a href="/tags/docker/">
+                        <span class="chip bg-color">docker</span>
                     </a>
                     
                 </div>
@@ -937,13 +865,13 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2498748118.html">
+                <a href="/posts/398695014.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Error: EACCES: permission denied 解决方法">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Linux管理Python版本">
                         
-                        <span class="card-title">Error: EACCES: permission denied 解决方法</span>
+                        <span class="card-title">Linux管理Python版本</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -960,8 +888,8 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/npm/" class="post-category">
-                                    npm
+                            <a href="/categories/python/" class="post-category">
+                                    python
                                 </a>
                             
                             
@@ -971,12 +899,12 @@ Installed Python-3.9.16 to /root/.pyenv/versions/3.9.16
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/npm/">
-                        <span class="chip bg-color">npm</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
-                    <a href="/tags/node-js/">
-                        <span class="chip bg-color">node.js</span>
+                    <a href="/tags/pyenv/">
+                        <span class="chip bg-color">pyenv</span>
                     </a>
                     
                 </div>
