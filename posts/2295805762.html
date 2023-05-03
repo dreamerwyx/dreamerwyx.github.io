@@ -552,6 +552,7 @@
             <div id="articleContent">
                 <h2 id="一、ELK-是什么？"><a href="#一、ELK-是什么？" class="headerlink" title="一、ELK 是什么？"></a>一、ELK 是什么？</h2><p>本篇文章主要是手把手教你搭建 ELK 实时日志分析平台，那么，ELK 到底是什么呢？<br>ELK 是三个开源框架的简写，分别是：<code>Elasticsearch</code>、<code>Logstash</code>、<code>Kibana</code> 。</p>
 <p>| 框架 | 简介 | 作用 |<br>| — | ———– |	—— |<br>| <code>Elasticsearch</code> | 开源分布式搜索引擎，提供存储、分析、搜索功能。特点：分布式、基于reasful风格、支持海量高并发的准实时搜索场景、稳定、可靠、快速、使用方便等。|接收搜集的海量结构化日志数据，并提供给Kibana查询分析。|<br>| <code>Logstash</code> | 开源日志搜集、分析、过滤框架，支持多种数据输入输出方式。|	用于收集日志，对日志进行过滤形成结构化数据，并转发到Elasticsearch中。	|<br>| <code>Kibana</code> | 开源日志报表系统，对Elasticsearch以及Logstash有良好的web页面支持。|	对Elasticsearch提供的数据进行分析展示。	|  </p>
+<p><img src="https://images.dreamerwyx.top/img/20230503-174728.jpeg"></p>
 <p>Elasticsearch 的核心是搜索引擎，所以用户开始将其用于日志用例，并希望能够轻松地对日志进行采集和可视化。有鉴于此，Elastic 引入了强大的采集管道 Logstash 和灵活的可视化工具 Kibana。</p>
 <h2 id="二、基础配置"><a href="#二、基础配置" class="headerlink" title="二、基础配置"></a>二、基础配置</h2><pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> vim /etc/security/limits.conf
 <span class="token comment" spellcheck="true"># 增加或者修改下面的字段</span>
@@ -573,7 +574,10 @@ vm.max_map_count <span class="token operator">=</span> 262144
 </blockquote>
 <ul>
 <li>第一次运行，COPY docker中的配置文件到本地，复制完删除这些容器。<br>然后在本地根据具体情况来修改这些配置文件。</li>
-<li>第二次运行，把本地修改好的配置文件挂载到容器内。</li>
+<li>第二次运行，把本地修改好的配置文件挂载到容器内。<blockquote>
+<p>注意Elasticsearch，kibana，logstash<code>软件版本需要一致</code>，要不然可能会出现读取数据失败。</p>
+</blockquote>
+</li>
 </ul>
 <h3 id="1-创建docker网络"><a href="#1-创建docker网络" class="headerlink" title="1.创建docker网络"></a>1.创建docker网络</h3><pre class=" language-bash"><code class="language-bash">$ docker network create -d bridge elastic
 </code></pre>
