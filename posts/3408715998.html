@@ -517,7 +517,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-05-08
+                    2023-05-31
                 </div>
                 
 
@@ -604,6 +604,7 @@ newgrp docker
 docker version
 </code></pre>
 <h4 id="2-docker相关设置"><a href="#2-docker相关设置" class="headerlink" title="2.docker相关设置"></a>2.docker相关设置</h4><pre class=" language-bash"><code class="language-bash">$ <span class="token function">vi</span> /etc/docker/daemon.json
+<span class="token comment" spellcheck="true"># 下面注释的文字不要放到json文件里</span>
 <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true"># 换源</span>
     <span class="token comment" spellcheck="true"># 国内网络问题，pull镜像大概率速度很慢，可以添加加速仓库</span>
@@ -794,7 +795,7 @@ ubuntu   Ready    control-plane,master   66m   v1.21.2
 <h3 id="查看kubelet日志"><a href="#查看kubelet日志" class="headerlink" title="查看kubelet日志"></a>查看kubelet日志</h3><pre class=" language-bash"><code class="language-bash">journalctl -f -u kubelet  <span class="token comment" spellcheck="true"># 查看kubelet日志</span>
 journalctl -f -u kubelet <span class="token operator">></span> kubelet.log  <span class="token comment" spellcheck="true"># 将日志输出到本地文件查看</span>
 </code></pre>
-<h2 id="踩坑经验"><a href="#踩坑经验" class="headerlink" title="踩坑经验"></a>踩坑经验</h2><h3 id="集群网络初始化错误"><a href="#集群网络初始化错误" class="headerlink" title="集群网络初始化错误"></a>集群网络初始化错误</h3><pre class=" language-bash"><code class="language-bash">root@ubuntu:~<span class="token comment" spellcheck="true"># kubectl apply -f kube-flannel.yml</span>
+<h2 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h2><h3 id="集群网络初始化错误"><a href="#集群网络初始化错误" class="headerlink" title="集群网络初始化错误"></a>集群网络初始化错误</h3><pre class=" language-bash"><code class="language-bash">root@ubuntu:~<span class="token comment" spellcheck="true"># kubectl apply -f kube-flannel.yml</span>
 namespace/kube-flannel created
 clusterrole.rbac.authorization.k8s.io/flannel created
 clusterrolebinding.rbac.authorization.k8s.io/flannel created
